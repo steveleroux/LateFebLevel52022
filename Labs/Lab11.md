@@ -85,10 +85,10 @@ leaf1-DC1:
 """
 switches = yaml.safe_load(config)
 
-for iface in switches['leaf1']['interfaces']:
+for iface in switches['leaf1-DC1']['interfaces']:
     print("interface %s") % iface
-    ip = switches['leaf1']['interfaces'][iface]['ipv4']
-    mask = switches['leaf1']['interfaces'][iface]['mask']
+    ip = switches['leaf1-DC1']['interfaces'][iface]['ipv4']
+    mask = switches['leaf1-DC1']['interfaces'][iface]['mask']
     print(" ip address %s/%s") % (ip, mask)
     if "Ethernet" in iface:
         print " no switchport"
@@ -103,7 +103,7 @@ This should display an EOS friendly syntax that would configure the interfaces o
 
 
 
-The for loop iterates through the elements under ['leaf1']['interfaces'], obtains the requsite information (ip, mask) and also checks to see if "Ethernet" is in the hostname. If Ethernet is in the hostname, the script issues the "no switchport" command. 
+The for loop iterates through the elements under ['leaf1-DC1']['interfaces'], obtains the requsite information (ip, mask) and also checks to see if "Ethernet" is in the hostname. If Ethernet is in the hostname, the script issues the "no switchport" command. 
 
 *(Don't worry about the order of interfaces, CloudVision will put them in the correct order when applied to the switch.)*
 
