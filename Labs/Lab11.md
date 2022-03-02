@@ -47,8 +47,6 @@ print(switches['leaf1']['interfaces']['loopback0']['ipv4'])
 
 Select leaf1 then click "Generate".
 
-![][136]
-
 You should see the IP address displayed of loopback0 on the right.
 
 Replace the print statement with the following:
@@ -65,8 +63,6 @@ for iface in switches['leaf1']['interfaces']:
 
 
 Click generate to show the config. This will loop through all interfaces and add the IP/mask.
-
-![][137]
 
 *(Don't worry about the order, CloudVision will put them in the correct order when applied to the switch.)*
 
@@ -167,13 +163,9 @@ for switch in switches:
 
 Now generate the configlet:
 
-![][138]
-
 Iterating through all the switches isn't useful for this purpose however, so we need the configlet to generate just a single switch's configuration from the YAML file.
 
 We will need to transfer the variable here (in the red box):
-
-![][139]
 
 With this value you can specify the first key and obtain all the key value pairs underneath it.
 
