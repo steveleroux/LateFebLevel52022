@@ -24,7 +24,7 @@ Add the following to it:
 <pre>
 import yaml
 config = """
-leaf1:
+leaf1-DC1:
   interfaces:
     loopback0:
       ipv4: 192.168.101.11
@@ -65,7 +65,7 @@ Replace the entire contents of the configlet with the following:
 <pre>
 import yaml
 config = """
-leaf1:
+leaf1-DC1:
   interfaces:
     loopback0:
       ipv4: 192.168.101.11
@@ -154,7 +154,7 @@ for item in labels:
     
 
 config = """
-spine1:
+spine1-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.101
@@ -177,7 +177,7 @@ spine1:
     Ethernet7: 
       ipv4: 192.168.103.31
       mask: 31
-spine2:
+spine2-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.102
@@ -200,7 +200,7 @@ spine2:
     Ethernet7: 
       ipv4: 192.168.103.33
       mask: 31
-spine3:
+spine3-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.103
@@ -223,7 +223,7 @@ spine3:
     Ethernet7: 
       ipv4: 192.168.103.35
       mask: 31
-leaf1:
+leaf1-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.11
@@ -240,7 +240,7 @@ leaf1:
     Ethernet5: 
       ipv4: 192.168.103.4
       mask: 31
-leaf2:
+leaf2-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.12
@@ -257,7 +257,7 @@ leaf2:
     Ethernet5: 
       ipv4: 192.168.103.10
       mask: 31
-leaf3:
+leaf3-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.13
@@ -274,7 +274,7 @@ leaf3:
     Ethernet5: 
       ipv4: 192.168.103.16
       mask: 31
-leaf4:
+leaf4-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.14
@@ -291,7 +291,7 @@ leaf4:
     Ethernet5: 
       ipv4: 192.168.103.22
       mask: 31
-borderleaf1:
+borderleaf1-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.21
@@ -308,7 +308,7 @@ borderleaf1:
     Ethernet5: 
       ipv4: 192.168.103.28
       mask: 31
-borderleaf2:
+borderleaf2-DC1:
   interfaces:
     loopback0: 
       ipv4: 192.168.101.21
@@ -362,6 +362,6 @@ Verify the interfaces are configured by going into the "Devices" tab at the top,
 
 Once verification is complete, on the Spine and Leaf containers, remove the Interface-Builder configlet builder. This will remove all created configlets from this builder. Be sure to click "Update" and "Save", and run the tasks as a change control. 
 
-This is a required step for the next labs. 
+
 
 
