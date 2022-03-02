@@ -43,7 +43,7 @@ leaf1-DC1:
       mask: 31
 """
 switches = yaml.safe_load(config)
-print(switches['leaf1']['interfaces']['loopback0']['ipv4'])
+print(switches['leaf1-DC1']['interfaces']['loopback0']['ipv4'])
 
 </pre>
 
