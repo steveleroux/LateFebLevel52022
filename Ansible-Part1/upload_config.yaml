@@ -1,0 +1,7 @@
+---
+- hosts: leaf1-DC1
+  name: Upload arbitrary config
+  tasks:
+  -  name: Upload via config
+     eos_config:
+       src: "{{lookup('env','PWD')}}/vlan-1000.cfg"
