@@ -9,4 +9,4 @@
   - name: Gen interface file
     template:
       src: "{{lookup('env','PWD')}}/templates/gen_interfaces.j2"
-      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_interface.cfg"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}/{{inventory_hostname}}_interface.cfg"

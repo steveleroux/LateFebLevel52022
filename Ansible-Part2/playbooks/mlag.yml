@@ -1,0 +1,16 @@
+---
+- hosts: left_leafs
+  name: Upload MLAG for left leafs
+  tasks:
+  - name: Left MLAG Config
+    eos_config:
+      src: "{{lookup('env','PWD')}}/configs/static/MLAG-Left.cfg"
+- hosts: right_leafs
+  name: Upload MLAG for left leafs
+  tasks:
+  - name: Right MLAG Config
+    eos_config:
+      src: "{{lookup('env','PWD')}}/configs/static/MLAG-Right.cfg"
+
+
+

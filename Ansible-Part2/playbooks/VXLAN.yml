@@ -1,0 +1,16 @@
+---
+- hosts: leafs_DC1, leafs_DC2
+  name: Generate eBGP-based VXLAN Overlay/Tenants for leafs
+  tasks:
+  - name: Load YAML into dictionary
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/underlay.yml"
+      name: underlay
+  - name: Load YAML for VXLAN into dictionary
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/VXLAN.yml"
+      name: VXLAN
+  - name: Gen leaf VXLAN config
+    template:
+      src: "{{lookup('env','PWD')}}/templates/VXLAN.j2"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}/{{inventory_hostname}}_VXLAN.cfg"

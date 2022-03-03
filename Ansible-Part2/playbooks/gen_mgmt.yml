@@ -1,0 +1,12 @@
+---
+- hosts: DC1, DC2
+  name: Generate management/base part of the config
+  tasks:
+  - name: Load YAML into dictionary
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/mgmt.yml"
+      name: mgmt
+  - name: Gen BASE config file
+    template:
+      src: "{{lookup('env','PWD')}}/templates/mgmt.j2"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}/{{inventory_hostname}}_BASE.cfg"

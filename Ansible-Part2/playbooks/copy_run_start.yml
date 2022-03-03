@@ -1,0 +1,7 @@
+---
+- name: Copy run start
+  hosts: DC1, DC2
+  tasks:
+  - name: Copy run start
+    eos_command:
+      commands: copy run start

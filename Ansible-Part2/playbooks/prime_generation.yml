@@ -1,0 +1,14 @@
+---
+- name: Generate configurations for L3LS-EVPN-VXLAN Fabric
+  import_playbook: gen_interfaces.yml
+
+- name: Generate underlay for spines
+  import_playbook: gen_spine_underlay.yml
+
+- name: Generate underlay for leafs
+  import_playbook: gen_leaf_underlay.yml
+
+- name: Generate VXLAN config
+  import_playbook: VXLAN.yml
+
+

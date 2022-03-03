@@ -9,4 +9,4 @@
   - name: Gen leaf BGP config
     template:
       src: "{{lookup('env','PWD')}}/templates/leaf_underlay.j2"
-      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_underlay.cfg"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}/{{inventory_hostname}}_underlay.cfg"

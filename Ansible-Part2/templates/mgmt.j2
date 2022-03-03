@@ -1,0 +1,13 @@
+hostname {{ inventory_hostname }}
+
+
+!
+{% for interface in mgmt[inventory_hostname]['interfaces'] %}
+interface {{ interface }}
+  ip address {{ mgmt[inventory_hostname]['interfaces'][interface]}}
+{% endfor %}
+dns domain arista.lab
+!
+ip route 0.0.0.0/0 192.168.0.1
+!
+ip routing

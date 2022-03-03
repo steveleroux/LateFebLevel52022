@@ -1,0 +1,9 @@
+---
+- name: Upload configs
+  import_playbook: upload_configs.yml
+
+- name: Upload MLAG
+  import_playbook: mlag.yml
+
+
+

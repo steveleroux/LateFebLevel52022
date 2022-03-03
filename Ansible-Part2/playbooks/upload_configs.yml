@@ -4,7 +4,5 @@
   tasks:
   - name: Upload all interface configurations
     eos_config:
-      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_interface.cfg"
-  - name: Upload all underlay configs
-    eos_config: 
-      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_underlay.cfg"
+      src: "{{lookup('env','PWD')}}/configs/final/{{inventory_hostname}}_FINAL.cfg"
+      replace: config

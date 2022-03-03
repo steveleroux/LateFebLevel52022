@@ -9,4 +9,4 @@
   - name: Gen spine BGP config
     template:
       src: "{{lookup('env','PWD')}}/templates/spine_underlay.j2"
-      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_underlay.cfg"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}/{{inventory_hostname}}_underlay.cfg"
