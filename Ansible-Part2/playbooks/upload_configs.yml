@@ -1,0 +1,10 @@
+---
+- hosts: DC1, DC2
+  name: Upload all configs
+  tasks:
+  - name: Upload all interface configurations
+    eos_config:
+      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_interface.cfg"
+  - name: Upload all underlay configs
+    eos_config: 
+      src: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_underlay.cfg"

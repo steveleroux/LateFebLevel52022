@@ -1,0 +1,12 @@
+---
+- hosts: leafs_DC1, leafs_DC2
+  name: Generate eBGP-based EVPN Underlay for leafs
+  tasks:
+  - name: Load YAML into dictionary
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/underlay.yml"
+      name: underlay
+  - name: Gen leaf BGP config
+    template:
+      src: "{{lookup('env','PWD')}}/templates/leaf_underlay.j2"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_underlay.cfg"

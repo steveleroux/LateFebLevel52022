@@ -1,0 +1,12 @@
+---
+- hosts: DC1, DC2
+  name: Generate interface part of the config
+  tasks:
+  - name: Load YAML into dictionary
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/underlay.yml"
+      name: underlay
+  - name: Gen interface file
+    template:
+      src: "{{lookup('env','PWD')}}/templates/gen_interfaces.j2"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_interface.cfg"
