@@ -1,0 +1,21 @@
+---
+- hosts: DC1, DC2
+  name: Add SSH user and keys
+  tasks:
+  - name: Add user
+    eos_user:
+      name: automator
+      state: present
+      nopassword: yes
+  - name: Parameters for user
+    eos_user:
+      name: automator
+      nopassword: yes
+      privilege: 15
+      role: network-admin
+      state: present
+  - name: Add SSH key
+    eos_user:
+      name: automator
+      sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      state: present

@@ -1,0 +1,9 @@
+---
+- hosts: leaf1-DC1
+  name: Delete VLANs
+  tasks:
+  - name: Delete VLAN 20
+    arista.eos.eos_vlans:
+      config:
+      - vlan_id: 20
+      state: deleted
